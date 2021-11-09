@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock! Paper! Scissors!</title>
+</head>
+<body>
+
+  <script>
+
+    let tries = 10
+    let wins = 0
+
+    for (let i = 0; i < 11; i++) {
+      
+      let com = Math.floor(Math.random() * 3)
+      
+      if (com === 0) {
+        com = "r"
+      } else if (com === 1) {
+        com = "p"
+      } else {
+        com = "s"
+      }
+
+      console.log(com)
+      user = prompt("Pick your poison: '(r)ock', '(p)aper', or '(s)cissors'?")
+
+      if (user === com) {
+        alert("Quit copying me. Go again.")
+        if (i > 0) {
+          i--
+        }
+      } else if (user === "r" && com === "p" || user === "p" && com === "s" || user === "s" && com === "r") {
+        alert("HAHA! That's a loss. Try again.")
+      } else {
+        alert("Pure luck. You win whatevs. Go again.")
+        wins++
+      }
+      console.log(i)
+    }
+
+    alert("Your score is: " + wins + " wins!")
+
+  </script>
+
+</body>
+</html>
